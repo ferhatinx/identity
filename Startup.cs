@@ -21,7 +21,13 @@ namespace identity
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddIdentity<AppUser,AppRole>().AddEntityFrameworkStores<UdemyContext>();
+            services.AddIdentity<AppUser,AppRole>(opt=>{
+                opt.Password.RequireDigit =false;
+                opt.Password.RequiredLength = 1;
+                opt.Password.RequireLowercase = false;
+                opt.Password.RequireUppercase = false;
+                opt.Password.RequireNonAlphanumeric =false;
+            }).AddEntityFrameworkStores<UdemyContext>();
             services.AddDbContext<UdemyContext>(opt =>{
                 opt.UseSqlServer("server=DESKTOP-3KU2KP7; database=Dbidentity; integrated security=true");
             });
