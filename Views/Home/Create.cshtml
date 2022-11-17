@@ -1,0 +1,42 @@
+@model UserCreateModel
+@{
+    Layout="~/Views/Shared/_Layout.cshtml";
+}
+<h2 class="mt-3">Create Sayfası</h2>
+
+<form asp-action="Create" asp-controller="Home" method="post" class="p-3 shadow">
+ <span class="text-danger" asp-validation-for="@Model.UserName"></span>
+<div class="input-group mb-3">
+ 
+  <input class="form-control" placeholder="Username" asp-for="@Model.UserName">
+</div>
+<span class="text-danger" asp-validation-for="@Model.Email"></span>
+<div class="input-group mb-3">
+  
+  <input type="email" class="form-control" placeholder="Mail" asp-for="@Model.Email">
+</div>
+ <span class="text-danger" asp-validation-for="@Model.Password"></span>
+<div class="input-group mb-3">
+ 
+  <input type="password" class="form-control" placeholder="Şifre" asp-for="@Model.Password">
+</div>
+
+<span class="text-danger" asp-validation-for="@Model.ConfirmPassword"></span>
+<div class="input-group mb-3">
+  
+  <input type="password" class="form-control" placeholder="Şifre Tekrar" asp-for="@Model.ConfirmPassword">
+</div>
+<span class="text-danger" asp-validation-for="@Model.ConfirmPassword"></span>
+<div class="input-group mb-3">
+  
+ <select class="form-select" asp-for="@Model.Gender">
+  <option selected>Cinsiyet Seçiniz</option>
+  <option value="Erkek">Erkek</option>
+  <option value="Kız">Kız</option>
+</select>
+</div>
+<div class="input-group mb-3">
+ <button type="submit" class="btn btn-primary">Ekle</button>
+</div>
+<div class="mt-3" asp-validation-summary="ModelOnly"></div>
+</form>
