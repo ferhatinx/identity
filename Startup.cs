@@ -27,6 +27,7 @@ namespace identity
                 opt.Password.RequireLowercase = false;
                 opt.Password.RequireUppercase = false;
                 opt.Password.RequireNonAlphanumeric =false;
+                opt.SignIn.RequireConfirmedPhoneNumber =true;
             }).AddEntityFrameworkStores<UdemyContext>();
             services.AddDbContext<UdemyContext>(opt =>{
                 opt.UseSqlServer("server=DESKTOP-3KU2KP7; database=Dbidentity; integrated security=true");

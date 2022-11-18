@@ -9,10 +9,12 @@ namespace Controllers
     public class HomeController : Controller
     {
         private readonly UserManager<AppUser> _usermanager;
+        private readonly SignInManager<AppUser> _signinmanager;
 
-        public HomeController(UserManager<AppUser> usermanager)
+        public HomeController(UserManager<AppUser> usermanager, SignInManager<AppUser> signinmanager)
         {
             _usermanager = usermanager;
+            _signinmanager = signinmanager;
         }
 
         public IActionResult Index()
@@ -48,6 +50,31 @@ namespace Controllers
                 
             }
             return View(model);
+        }
+        public IActionResult SignIn()
+        {
+            return View();
+        }
+        [HttpPost]
+          public async Task<IActionResult> SignIn(UserSignInModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var signinresult =await _signinmanager.PasswordSignInAsync(model.UserName,model.Password,false,false);
+                if (signinresult.Succeeded)
+                {
+                    //başarılı ise
+                }
+                else if(signinresult.IsLockedOut)
+                {
+                    //hesap kilitli
+                }
+                else if(signinresult.IsNotAllowed)
+                {
+                    //email ve phonenumber doğrulanmamış
+                }
+            }
+            return View();
         }
     }
 }

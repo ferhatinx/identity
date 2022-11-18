@@ -1,0 +1,23 @@
+@model UserSignInModel
+@{
+    Layout="~/Views/Shared/_Layout.cshtml";
+}
+<h2 class="mt-3">Giriş Sayfası</h2>
+
+<form asp-action="SignIn" asp-controller="Home" method="post" class="p-3 shadow">
+ <span class="text-danger" asp-validation-for="@Model.UserName"></span>
+<div class="input-group mb-3">
+  <input class="form-control" placeholder="Kullanıcı Adı" asp-for="@Model.UserName">
+</div>
+ <span class="text-danger" asp-validation-for="@Model.Password"></span>
+<div class="input-group mb-3">
+  <input class="form-control" placeholder="Şifre" asp-for="@Model.Password">
+</div>
+
+
+
+<div class="input-group mb-3">
+ <button type="submit" class="btn btn-primary">Ekle</button>
+</div>
+<div class="mt-3" asp-validation-summary="ModelOnly"></div>
+</form>
