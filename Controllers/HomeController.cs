@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Models;
@@ -10,6 +11,7 @@ namespace Controllers
     {
         private readonly UserManager<AppUser> _usermanager;
         private readonly SignInManager<AppUser> _signinmanager;
+        private readonly RoleManager<AppRole> _rolemanager;
 
         public HomeController(UserManager<AppUser> usermanager, SignInManager<AppUser> signinmanager)
         {
@@ -63,6 +65,10 @@ namespace Controllers
                 var signinresult =await _signinmanager.PasswordSignInAsync(model.UserName,model.Password,false,false);
                 if (signinresult.Succeeded)
                 {
+                    await _rolemanager.CreateAsync(new AppRole{
+                        Name ="Admin",
+                        CreatedTime=System.DateTime.Now
+                    });
                     //başarılı ise
                 }
                 else if(signinresult.IsLockedOut)
@@ -74,6 +80,11 @@ namespace Controllers
                     //email ve phonenumber doğrulanmamış
                 }
             }
+            return View();
+        }
+        [Authorize]
+        public IActionResult GetUserInfo()
+        {
             return View();
         }
     }

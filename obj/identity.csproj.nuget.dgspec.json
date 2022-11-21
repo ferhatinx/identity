@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "E:\\ASP.NET CORE\\YSKudemy\\identity\\identity_1\\identity\\identity.csproj": {}
+    "C:\\Users\\Betül\\3D Objects\\ferhat\\C#\\identity\\identity\\identity.csproj": {}
   },
   "projects": {
-    "E:\\ASP.NET CORE\\YSKudemy\\identity\\identity_1\\identity\\identity.csproj": {
+    "C:\\Users\\Betül\\3D Objects\\ferhat\\C#\\identity\\identity\\identity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\ASP.NET CORE\\YSKudemy\\identity\\identity_1\\identity\\identity.csproj",
+        "projectUniqueName": "C:\\Users\\Betül\\3D Objects\\ferhat\\C#\\identity\\identity\\identity.csproj",
         "projectName": "identity",
-        "projectPath": "E:\\ASP.NET CORE\\YSKudemy\\identity\\identity_1\\identity\\identity.csproj",
-        "packagesPath": "C:\\Users\\ferha\\.nuget\\packages\\",
-        "outputPath": "E:\\ASP.NET CORE\\YSKudemy\\identity\\identity_1\\identity\\obj\\",
+        "projectPath": "C:\\Users\\Betül\\3D Objects\\ferhat\\C#\\identity\\identity\\identity.csproj",
+        "packagesPath": "C:\\Users\\Betül\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Betül\\3D Objects\\ferhat\\C#\\identity\\identity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ferha\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Betül\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -78,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

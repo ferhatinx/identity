@@ -47,7 +47,8 @@ namespace identity
                 RequestPath="/node_modules"
             });
             app.UseRouting();
-
+            app.UseAuthorization();
+            app.UseAuthentication();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapDefaultControllerRoute();
