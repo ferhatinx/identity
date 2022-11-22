@@ -31,7 +31,8 @@ namespace identity
                 opt.SignIn.RequireConfirmedPhoneNumber =false;
             }).AddEntityFrameworkStores<UdemyContext>();
             services.AddDbContext<UdemyContext>(opt =>{
-                opt.UseSqlite("Data Source=Dbidentity");
+                opt.UseSqlServer("server=DESKTOP-3KU2KP7; database=DBidentity; integrated security=true;");
+            
             });
             services.AddControllersWithViews();
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
