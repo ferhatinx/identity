@@ -3,9 +3,12 @@ build_property.TargetFramework = net5.0
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
-build_property.InvariantGlobalization = 
-build_property.PlatformNeutralAssembly = 
-build_property.EnforceExtendedAnalyzerRules = 
-build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.PublishSingleFile = 
+build_property.IncludeAllContentForSelfExtract = 
+build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = identity
+<<<<<<< HEAD
 build_property.ProjectDir = e:\ASP.NET CORE\YSKudemy\identity\
+=======
+build_property.ProjectDir = C:\Users\Betül\3D Objects\ferhat\C#\identity-1\
+>>>>>>> 1acd7d75e8b4f91f0b21ec4fddd885860216b4df
