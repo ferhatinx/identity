@@ -216,3 +216,6 @@ E:\ASP.NET CORE\YSKudemy\identity\identity_1\identity\obj\Debug\net5.0\identity.
 E:\ASP.NET CORE\YSKudemy\identity\identity_1\identity\obj\Debug\net5.0\ref\identity.dll
 E:\ASP.NET CORE\YSKudemy\identity\identity_1\identity\obj\Debug\net5.0\Razor\Views\Home\SignIn.cshtml.g.cs
 C:\Users\Betül\3D Objects\ferhat\C#\identity\identity\obj\Debug\net5.0\Razor\Views\Home\SignIn.cshtml.g.cs
+E:\ASP.NET CORE\YSKudemy\identity\obj\Debug\net5.0\Razor\Views\Home\Create.cshtml.g.cs
+E:\ASP.NET CORE\YSKudemy\identity\obj\Debug\net5.0\Razor\Views\Home\SignIn.cshtml.g.cs
+E:\ASP.NET CORE\YSKudemy\identity\obj\Debug\net5.0\Razor\Views\Home\GetUserInfo.cshtml.g.cs

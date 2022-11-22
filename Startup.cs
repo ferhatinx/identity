@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Context;
 using Entities;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -30,9 +31,10 @@ namespace identity
                 opt.SignIn.RequireConfirmedPhoneNumber =true;
             }).AddEntityFrameworkStores<UdemyContext>();
             services.AddDbContext<UdemyContext>(opt =>{
-                opt.UseSqlServer("server=DESKTOP-3KU2KP7; database=Dbidentity; integrated security=true");
+                opt.UseSqlServer("server=DESKTOP-3KU2KP7; database=DBidentity; integrated security=true;");
             });
             services.AddControllersWithViews();
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,8 +49,8 @@ namespace identity
                 RequestPath="/node_modules"
             });
             app.UseRouting();
-            app.UseAuthorization();
             app.UseAuthentication();
+            app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapDefaultControllerRoute();

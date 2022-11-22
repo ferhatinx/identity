@@ -5,7 +5,7 @@ namespace Models
     public class UserCreateModel
     {
         [Required(ErrorMessage ="Kullanıcı Adı Giriniz")]
-        public string UserName { get; set; }
+        public string Username { get; set; }
 
         [EmailAddress(ErrorMessage = "Mail giriniz")]
         [Required(ErrorMessage = "Email Giriniz")]
