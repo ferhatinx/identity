@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "E:\\ASP.NET CORE\\YSKudemy\\identity\\identity.csproj": {}
+    "C:\\Users\\Betül\\3D Objects\\ferhat\\C#\\identity-1\\identity.csproj": {}
   },
   "projects": {
-    "E:\\ASP.NET CORE\\YSKudemy\\identity\\identity.csproj": {
+    "C:\\Users\\Betül\\3D Objects\\ferhat\\C#\\identity-1\\identity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\ASP.NET CORE\\YSKudemy\\identity\\identity.csproj",
+        "projectUniqueName": "C:\\Users\\Betül\\3D Objects\\ferhat\\C#\\identity-1\\identity.csproj",
         "projectName": "identity",
-        "projectPath": "E:\\ASP.NET CORE\\YSKudemy\\identity\\identity.csproj",
-        "packagesPath": "C:\\Users\\ferha\\.nuget\\packages\\",
-        "outputPath": "E:\\ASP.NET CORE\\YSKudemy\\identity\\obj\\",
+        "projectPath": "C:\\Users\\Betül\\3D Objects\\ferhat\\C#\\identity-1\\identity.csproj",
+        "packagesPath": "C:\\Users\\Betül\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Betül\\3D Objects\\ferhat\\C#\\identity-1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ferha\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Betül\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -56,6 +54,10 @@
               "target": "Package",
               "version": "[5.0.0, )"
             },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -69,8 +71,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -82,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     }
