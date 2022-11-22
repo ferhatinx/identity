@@ -47,15 +47,15 @@ namespace Controllers
                     Gender=model.Gender
                 
                 };
-              
+                await _rolemanager.CreateAsync(new(){
+                    Name="Member",
+                    CreatedTime=DateTime.Now
+                });
                 var identityResult = await _usermanager.CreateAsync(user, model.Password);
                 if (identityResult.Succeeded)
                 {
-                await _rolemanager.CreateAsync(new(){
-                    Name="Admin",
-                    CreatedTime=DateTime.Now
-                });
-                    await _usermanager.AddToRoleAsync(user,"Admin");
+
+                    await _usermanager.AddToRoleAsync(user,"Member");                    
                     return RedirectToAction("Index");
                     
                 }
@@ -67,9 +67,10 @@ namespace Controllers
             }
             return View(model);
         }
-        public IActionResult SignIn()
+        public IActionResult SignIn(string returnUrl)
         {
-            return View();
+            
+            return View(new UserSignInModel(){ReturnUrl = returnUrl});
         }
         [HttpPost]
         public async Task<IActionResult> SignIn(UserSignInModel model)
@@ -79,12 +80,23 @@ namespace Controllers
                 var signresult = await _signInManager.PasswordSignInAsync(model.Username,model.Password,true,false);
                 if (signresult.Succeeded)
                 {
-                    
+                    if (!string.IsNullOrWhiteSpace(model.ReturnUrl))
+                    {
+                        return Redirect(model.ReturnUrl);
+                    }
+                    var username = await _usermanager.FindByNameAsync(model.Username);
+                    var userrole =  await _usermanager.GetRolesAsync(username);
+                    if(userrole.Contains("Admin"))
+                    {
+                        return RedirectToAction("AdminPanel");
+                    }
+                    else
+                    {
+                        return RedirectToAction("Panel");
+                    }
                 }
-                else if (signresult.IsNotAllowed)
-                {
-                    
-                }
+                ModelState.AddModelError("","Kullanıcı adı ve parola hatalı");
+                
             
             
             }
@@ -95,6 +107,21 @@ namespace Controllers
         {
             var Username = User.Identity.Name;
             var role = User.Claims.FirstOrDefault(x=>x.Type==ClaimTypes.Role);
+            return View();
+        }
+        [Authorize(Roles ="Admin")]
+        public IActionResult AdminPanel()
+        {
+            return View();
+        }
+        [Authorize(Roles ="Member")]
+        public IActionResult Panel()
+        {
+            return View();
+        }
+        [Authorize(Roles ="Member")]
+        public IActionResult MemberPage()
+        {
             return View();
         }
        

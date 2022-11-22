@@ -21,9 +21,13 @@
         <li class="nav-item">
             <a class="nav-link" asp-action="SignIn" asp-controller="Home">Giriş Yap</a>
         </li>
+        @if (User != null && User.IsInRole("Admin"))
+        {
         <li class="nav-item">
             <a class="nav-link" asp-action="GetUserInfo" asp-controller="Home">GetUserInfo</a>
-        </li>
+        </li>    
+        }
+        
     </ul>
     <div class="container">
         @RenderBody()

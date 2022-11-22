@@ -34,6 +34,14 @@ namespace identity
                 opt.UseSqlServer("server=DESKTOP-3KU2KP7; database=DBidentity; integrated security=true;");
             
             });
+            services.ConfigureApplicationCookie(opt =>{
+                opt.Cookie.HttpOnly = true;
+                opt.Cookie.SameSite = SameSiteMode.Strict;
+                opt.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
+                opt.Cookie.Name = "UdemyCookie";
+                opt.ExpireTimeSpan=TimeSpan.FromDays(25);
+                opt.LoginPath = new PathString("/Home/SignIn");
+            });
             services.AddControllersWithViews();
         
         }

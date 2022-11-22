@@ -9,5 +9,7 @@ namespace Models
 
         [Required(ErrorMessage ="Şifre Giriniz")]
         public string Password { get; set; }
+
+        public string ReturnUrl { get; set; }
     }
 }
