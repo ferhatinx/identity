@@ -17,5 +17,11 @@
     <div class="input-group mb-3">
         <button type="submit" class="btn btn-primary">Giriş</button>
     </div>
+    <div class="form-check">
+  <input class="form-check-input" type="checkbox" asp-for="@Model.RememberMe">
+  <label class="form-check-label" for="RemeberMe">
+    Beni Hatırla
+  </label>
+</div>
     <div class="mt-3" asp-validation-summary="ModelOnly"></div>
 </form>

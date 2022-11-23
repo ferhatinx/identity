@@ -336,3 +336,4 @@ E:\ASP.NET CORE\YSKudemy\identity\bin\Debug\net5.0\runtimes\win-x64\native\e_sql
 E:\ASP.NET CORE\YSKudemy\identity\bin\Debug\net5.0\runtimes\win-x86\native\e_sqlite3.dll
 E:\ASP.NET CORE\YSKudemy\identity\obj\Debug\net5.0\Razor\Views\Home\AdminPanel.cshtml.g.cs
 E:\ASP.NET CORE\YSKudemy\identity\obj\Debug\net5.0\Razor\Views\Home\Panel.cshtml.g.cs
+E:\ASP.NET CORE\YSKudemy\identity\obj\Debug\net5.0\Razor\Views\Home\MemberPage.cshtml.g.cs

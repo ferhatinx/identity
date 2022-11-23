@@ -15,39 +15,53 @@
         <li class="nav-item">
             <a class="nav-link active" asp-action="Index" asp-controller="Home">Anasayfa</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" asp-action="Create" asp-controller="Home">Kayıt Ol</a>   
+      
+        @if (User.Identity.IsAuthenticated)
+        {
+            <li class="nav-item">
+                <a class="nav-link" asp-action="SignOut" asp-controller="Home">Çıkış Yap</a>
+            </li>
+        }
+        else
+        {
+            <li class="nav-item">
+                <a class="nav-link" asp-action="SignIn" asp-controller="Home">Giriş Yap</a>
+            </li>
+              <li class="nav-item">
+            <a class="nav-link" asp-action="Create" asp-controller="Home">Kayıt Ol</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" asp-action="SignIn" asp-controller="Home">Giriş Yap</a>
-        </li>
+        }
+
         @if (User != null && User.IsInRole("Admin"))
         {
-        <li class="nav-item">
-            <a class="nav-link" asp-action="GetUserInfo" asp-controller="Home">GetUserInfo</a>
-        </li>    
+            <li class="nav-item">
+                <a class="nav-link" asp-action="GetUserInfo" asp-controller="Home">GetUserInfo</a>
+            </li>
         }
-        
+
     </ul>
     <div class="container">
         @RenderBody()
     </div>
-     <footer class="d-flex flex-wrap justify-content-between align-items-center p-3 my-4 border-top fixed-bottom">
-    <p class="col-md-4 mb-0 text-muted">&copy; 2021 Company, Inc</p>
+    <footer class="d-flex flex-wrap justify-content-between align-items-center p-3 my-4 border-top fixed-bottom">
+        <p class="col-md-4 mb-0 text-muted">&copy; 2021 Company, Inc</p>
 
-    <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-    </a>
+        <a href="/"
+            class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+            <svg class="bi me-2" width="40" height="32">
+                <use xlink:href="#bootstrap" />
+            </svg>
+        </a>
 
-    <ul class="nav col-md-4 justify-content-end">
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
-    </ul>
-  </footer>
-  <script src="~/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <ul class="nav col-md-4 justify-content-end">
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+        </ul>
+    </footer>
+    <script src="~/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
