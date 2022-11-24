@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Context;
+using CustomDescriber;
 using Entities;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
@@ -29,7 +30,7 @@ namespace identity
                 opt.Password.RequireUppercase = false;
                 opt.Password.RequireNonAlphanumeric =false;
                 opt.SignIn.RequireConfirmedPhoneNumber =false;
-            }).AddEntityFrameworkStores<UdemyContext>();
+            })/*.AddErrorDescriber<CustomErrorDescriber>()*/.AddEntityFrameworkStores<UdemyContext>();
             services.AddDbContext<UdemyContext>(opt =>{
                 opt.UseSqlServer("server=DESKTOP-3KU2KP7; database=DBidentity; integrated security=true;");
             
