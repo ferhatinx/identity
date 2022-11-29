@@ -19,8 +19,7 @@ namespace identity
 {
     public class Startup
     {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+       
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddIdentity<AppUser,AppRole>(opt=>{
@@ -30,6 +29,8 @@ namespace identity
                 opt.Password.RequireUppercase = false;
                 opt.Password.RequireNonAlphanumeric =false;
                 opt.SignIn.RequireConfirmedPhoneNumber =false;
+                opt.Lockout.MaxFailedAccessAttempts = 3; //3 hatalı girişte kilitlenecek
+
             })/*.AddErrorDescriber<CustomErrorDescriber>()*/.AddEntityFrameworkStores<UdemyContext>();
             services.AddDbContext<UdemyContext>(opt =>{
                 opt.UseSqlServer("server=DESKTOP-3KU2KP7; database=DBidentity; integrated security=true;");
@@ -42,12 +43,13 @@ namespace identity
                 opt.Cookie.Name = "UdemyCookie";
                 opt.ExpireTimeSpan=TimeSpan.FromDays(25);
                 opt.LoginPath = new PathString("/Home/SignIn");
+                opt.AccessDeniedPath = new PathString("/Home/AccessDenied");
             });
             services.AddControllersWithViews();
         
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+      
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

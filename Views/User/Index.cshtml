@@ -1,0 +1,33 @@
+@model List<AppUser>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<a class="btn btn-primary" asp-action="Create" asp-controller="User">Yeni KUllanıcı Ekle</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Username</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Email</th>
+             <th scope="col">Rolun info</th>
+               <th scope="col"></th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.UserName</th>
+                <td>@item.Gender</td>
+                <td>@item.Email</td> 
+                  <td><getuserinfo user-id="@item.Id"></getuserinfo></td>
+                 <td>
+                    <a asp-action="AssignRole" asp-controller="User" asp-route-id="@item.Id">AssignRole </a>
+                 </td>
+            </tr>
+        }
+
+    </tbody>
+</table>

@@ -13,21 +13,21 @@ namespace MyApp.Namespace.Home
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
-#line 3 "E:\ASP.NET CORE\YSKudemy\identity\Views\_ViewImports.cshtml"
+#line 4 "E:\ASP.NET CORE\YSKudemy\identity\Views\_ViewImports.cshtml"
 using Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "E:\ASP.NET CORE\YSKudemy\identity\Views\_ViewImports.cshtml"
+#line 5 "E:\ASP.NET CORE\YSKudemy\identity\Views\_ViewImports.cshtml"
 using Entities;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"fa9e2ad43628d91367bfa4a7e20c5110220bed18", @"/Views/Home/Panel.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a412cfcec090b5bebe0df5ed4bb3b4a7390e999e", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8a00e56d0fc28c30a5dac3de8e32600d23b8463d", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Home_Panel : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable
